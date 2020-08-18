@@ -1,0 +1,131 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Calculator_V2
+{
+    public partial class Calculator : Form
+    {
+        string input = string.Empty;        //Define input
+        string operand1 = string.Empty;     //Define 1st Number
+        string operand2 = string.Empty;     //Define 2nd Number
+        char equation;                      //defines operation.
+        double result = 0.0;                //Define Result
+        public Calculator()
+        {
+            InitializeComponent();
+        }
+        private void Number1_Click(object sender, EventArgs e)
+        {
+            this.screen.Text = string.Empty;
+            input += "1";
+            this.screen.Text += input;
+        }
+        private void Number2_Click(object sender, EventArgs e)
+        {
+            this.screen.Text = string.Empty;
+            input += "2";
+            this.screen.Text += input;
+        }
+        private void Number3_Click(object sender, EventArgs e)
+        {
+            this.screen.Text = string.Empty;
+            input += "3";
+            this.screen.Text += input;
+        }
+        private void Number4_Click(object sender, EventArgs e)
+        {
+            this.screen.Text = string.Empty;
+            input += "4";
+            this.screen.Text += input;
+        }
+        private void Number5_Click(object sender, EventArgs e)
+        {
+            this.screen.Text = string.Empty;
+            input += "5";
+            this.screen.Text += input;
+        }
+        private void Number6_Click(object sender, EventArgs e)
+        {
+            this.screen.Text = string.Empty;
+            input += "6";
+            this.screen.Text += input;
+        }
+        private void Number7_Click(object sender, EventArgs e)
+        {
+            this.screen.Text = string.Empty;
+            input += "7";
+            this.screen.Text += input;
+        }
+        private void Number8_Click(object sender, EventArgs e)
+        {
+            this.screen.Text = string.Empty;
+            input += "8";
+            this.screen.Text += input;
+        }
+        private void Number9_Click(object sender, EventArgs e)
+        {
+            this.screen.Text = string.Empty;
+            input += "9";
+            this.screen.Text += input;
+        }
+        private void Multiply_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            equation = '*';
+            input = string.Empty;
+        }
+        private void plus_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            equation = '+';
+            input = string.Empty;
+        }
+        private void minus_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            equation = '-';
+            input = string.Empty;
+        }
+        private void Divide_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            equation = '/';
+            input = string.Empty;
+        }
+        private void equals_Click(object sender, EventArgs e)
+        {
+            operand2 = input;
+            double num1, num2;
+            double.TryParse(operand1, out num1);    //Defining Operand1 as num1
+            double.TryParse(operand2, out num2);    //Defining Operand2 as num2
+
+            if (equation == '+')
+            {
+                result = num1 + num2;
+                screen.Text = result.ToString();    //changing the result to a string
+            }
+            else if (equation == '-')
+            {
+                result = num1 - num2;
+                screen.Text = result.ToString();    
+            }
+            else if (equation == '/')
+            {
+                result = num1 / num2;
+                screen.Text = result.ToString();    
+            }
+            else if (equation == '*')
+            {
+                result = num1 * num2;
+                screen.Text = result.ToString();    
+            }
+        }
+    }
+}
